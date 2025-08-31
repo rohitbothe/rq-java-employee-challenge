@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - EmployeeControllerImplTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>EmployeeControllerImplTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.reliaquest.api.controller.html">com.reliaquest.api.controller</a> &gt; EmployeeControllerImplTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">12</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.254s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createEmployeeFailed()</td>
+<td class="success">0.343s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteEmployeeById()</td>
+<td class="success">0.016s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteEmployeeByIdFailed()</td>
+<td class="success">0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllEmployeesFound()</td>
+<td class="success">0.025s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllEmployeesNotFound()</td>
+<td class="success">0.038s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getEmployeeByIdFound()</td>
+<td class="success">0.040s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getEmployeeByIdNotFound()</td>
+<td class="success">0.017s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getEmployeesByNameSearchFound()</td>
+<td class="success">0.024s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getEmployeesByNameSearchNotFound()</td>
+<td class="success">0.259s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getHighestSalaryOfEmployees()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTopTenHighestEarningEmployeeNamesFound()</td>
+<td class="success">0.018s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getTopTenHighestEarningEmployeeNamesNone()</td>
+<td class="success">0.413s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>19:32:44.576 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.reliaquest.api.controller.EmployeeControllerImplTests]: EmployeeControllerImplTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:32:45.074 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.reliaquest.api.ApiApplication for test class com.reliaquest.api.controller.EmployeeControllerImplTests
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2025-08-31T19:32:46.638+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Starting EmployeeControllerImplTests using Java 17.0.6 with PID 1952 (started by rohit in /Users/rohit/Downloads/JAVA/RELIAQUEST_2/java-employee-challenge/api)
+2025-08-31T19:32:46.640+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Running with Spring Boot v3.3.0, Spring v6.1.13
+2025-08-31T19:32:46.650+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-08-31T19:32:52.863+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.reliaquest.api.filter.RequestLogger    : Filter 'requestLogger' configured for use
+2025-08-31T19:32:52.897+05:30  INFO 1952 --- [employee-api] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-08-31T19:32:52.898+05:30  INFO 1952 --- [employee-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-08-31T19:32:52.909+05:30  INFO 1952 --- [employee-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+2025-08-31T19:32:53.026+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Started EmployeeControllerImplTests in 7.686 seconds (process running for 11.722)
+2025-08-31T19:32:53.233+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1]
+2025-08-31T19:32:53.339+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
+2025-08-31T19:32:53.412+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1], TimeTakenToComplete=179 ms
+2025-08-31T19:32:53.486+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1]
+2025-08-31T19:32:53.489+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 0
+2025-08-31T19:32:53.489+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
+2025-08-31T19:32:53.510+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1], TimeTakenToComplete=24 ms
+2025-08-31T19:32:53.539+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=DELETE, message=DELETE /api/v2/employee/51, client=127.0.0.1]
+2025-08-31T19:32:53.561+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Failed to Delete
+2025-08-31T19:32:53.564+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=DELETE, message=DELETE /api/v2/employee/51, client=127.0.0.1], TimeTakenToComplete=25 ms
+2025-08-31T19:32:53.589+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/search/Berry, client=127.0.0.1]
+2025-08-31T19:32:53.811+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 0
+2025-08-31T19:32:53.812+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
+2025-08-31T19:32:53.819+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/search/Berry, client=127.0.0.1], TimeTakenToComplete=230 ms
+2025-08-31T19:32:53.851+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=POST, message=POST /api/v2/employee, client=127.0.0.1]
+2025-08-31T19:32:54.173+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=POST, message=POST /api/v2/employee, client=127.0.0.1, payload={}], TimeTakenToComplete=322 ms
+2025-08-31T19:32:54.198+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/5, client=127.0.0.1]
+2025-08-31T19:32:54.223+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/5, client=127.0.0.1], TimeTakenToComplete=25 ms
+2025-08-31T19:32:54.249+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1]
+2025-08-31T19:32:54.253+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1], TimeTakenToComplete=4 ms
+2025-08-31T19:32:54.280+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1]
+2025-08-31T19:32:54.282+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 6
+2025-08-31T19:32:54.287+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1], TimeTakenToComplete=7 ms
+2025-08-31T19:32:54.305+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/search/Ashton, client=127.0.0.1]
+2025-08-31T19:32:54.313+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 6
+2025-08-31T19:32:54.316+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/search/Ashton, client=127.0.0.1], TimeTakenToComplete=11 ms
+2025-08-31T19:32:54.331+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=DELETE, message=DELETE /api/v2/employee/5, client=127.0.0.1]
+2025-08-31T19:32:54.333+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Deleted Successfully
+2025-08-31T19:32:54.335+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=DELETE, message=DELETE /api/v2/employee/5, client=127.0.0.1], TimeTakenToComplete=4 ms
+2025-08-31T19:32:54.353+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/highestSalary, client=127.0.0.1]
+2025-08-31T19:32:54.354+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Higest salary is 433060
+2025-08-31T19:32:54.358+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/highestSalary, client=127.0.0.1], TimeTakenToComplete=5 ms
+2025-08-31T19:32:54.372+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/23, client=127.0.0.1]
+2025-08-31T19:32:54.374+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
+2025-08-31T19:32:54.375+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/23, client=127.0.0.1], TimeTakenToComplete=3 ms
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6.4</a> at 31 Aug 2025, 19:32:54</p>
+</div>
+</div>
+</body>
+</html>
