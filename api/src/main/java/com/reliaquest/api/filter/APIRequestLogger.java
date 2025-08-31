@@ -11,11 +11,11 @@ import org.springframework.web.filter.CommonsRequestLoggingFilter;
  * @author Rohit Bothe
  */
 @Component
-public class RequestLogger extends CommonsRequestLoggingFilter {
+public class APIRequestLogger extends CommonsRequestLoggingFilter {
 
     private static final Logger log = LoggerFactory.getLogger(EmployeeControllerImpl.class);
 
-    public RequestLogger() {
+    public APIRequestLogger() {
         setIncludeQueryString(true);
         setIncludePayload(true);
         setMaxPayloadLength(10000);

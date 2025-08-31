@@ -30,7 +30,7 @@ import org.springframework.web.client.RestClientResponseException;
 /**
  * @author Rohit Bothe
  */
-public class EmployeeServiceTest {
+public class EmployeeServiceImplTest {
 
     private static final String SUCCESS_MESSAGE = "Request proceeded successfully";
 
@@ -54,6 +54,16 @@ public class EmployeeServiceTest {
         employeeService = new EmployeeServiceImpl(employeeRestApiService, circuitBreakerRegistry);
     }
 
+    @Test
+    public void testCircuitBreakerTrips() {
+        when(employeeRestApiService.findAll())
+                .thenThrow(new HttpClientErrorException(
+                        HttpStatus.TOO_MANY_REQUESTS, HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase()));
+        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
+        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
+        assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
+    }
+    
     @Test
     public void testGetAllEmployees() {
         List<Employee> employees = EmployeeTestUtil.getEmployeesList();
@@ -151,13 +161,4 @@ public class EmployeeServiceTest {
         assertEquals("HTTP error: " + HttpStatus.NOT_FOUND, ex.getMessage());
     }
 
-    @Test
-    public void testCircuitBreakerTrips() {
-        when(employeeRestApiService.findAll())
-                .thenThrow(new HttpClientErrorException(
-                        HttpStatus.TOO_MANY_REQUESTS, HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase()));
-        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
-        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
-        assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
-    }
 }
