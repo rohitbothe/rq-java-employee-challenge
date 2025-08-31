@@ -36,7 +36,6 @@ public class EmployeeControllerImplTests {
         List<Employee> list = new ArrayList<>();
 
         Employee emp = new Employee(UUID.randomUUID(), "Rohit", 6543, 35, "Manager", "rbothe1@visa.com");
-
         Employee emp1 = new Employee(UUID.randomUUID(), "Tiger Nixon", 320800, 25, "Manager", "rbothe1@visa.com");
         Employee emp2 = new Employee(UUID.randomUUID(), "Garrett Winters", 170750, 35, "Manager", "rbothe1@visa.com");
         Employee emp3 = new Employee(UUID.randomUUID(), "Ashton Cox", 86000, 45, "Manager", "rbothe1@visa.com");
@@ -51,7 +50,7 @@ public class EmployeeControllerImplTests {
         list.add(emp5);
 
         when(service.getAllEmployees()).thenReturn(list);
-        this.mockMvc.perform(get("/api/v2/employee")).andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee")).andExpect(status().isFound());
     }
 
     @Test
@@ -59,7 +58,7 @@ public class EmployeeControllerImplTests {
         List<Employee> list = new ArrayList<>();
 
         when(service.getAllEmployees()).thenReturn(list);
-        this.mockMvc.perform(get("/api/v2/employee")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee")).andExpect(status().isNotFound());
     }
 
     @Test
@@ -67,7 +66,6 @@ public class EmployeeControllerImplTests {
         List<Employee> list = new ArrayList<>();
 
         Employee emp = new Employee(UUID.randomUUID(), "Rohit", 6543, 35, "Manager", "rbothe1@visa.com");
-
         Employee emp1 = new Employee(UUID.randomUUID(), "Tiger Nixon", 320800, 25, "Manager", "rbothe1@visa.com");
         Employee emp2 = new Employee(UUID.randomUUID(), "Garrett Winters", 170750, 35, "Manager", "rbothe1@visa.com");
         Employee emp3 = new Employee(UUID.randomUUID(), "Ashton Cox", 86000, 45, "Manager", "rbothe1@visa.com");
@@ -82,7 +80,7 @@ public class EmployeeControllerImplTests {
         list.add(emp5);
 
         when(service.getAllEmployeesByName("Ashton")).thenReturn(list);
-        this.mockMvc.perform(get("/api/v2/employee/search/Ashton")).andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee/search/Ashton")).andExpect(status().isFound());
     }
 
     @Test
@@ -90,7 +88,7 @@ public class EmployeeControllerImplTests {
         List<Employee> list = new ArrayList<>();
 
         when(service.getAllEmployeesByName("Berry")).thenReturn(list);
-        this.mockMvc.perform(get("/api/v2/employee/search/Berry")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee/search/Berry")).andExpect(status().isNotFound());
     }
 
     @Test
@@ -98,21 +96,21 @@ public class EmployeeControllerImplTests {
         Employee emp5 = new Employee(UUID.randomUUID(), "Airi Satou", 162700, 30, "Manager", "rbothe1@visa.com");
 
         when(service.getEmployeeById("5")).thenReturn(emp5);
-        this.mockMvc.perform(get("/api/v2/employee/5")).andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee/5")).andExpect(status().isFound());
     }
 
     @Test
     public void getEmployeeByIdNotFound() throws Exception {
 
         when(service.getEmployeeById("23")).thenReturn(null);
-        this.mockMvc.perform(get("/api/v2/employee/23")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee/23")).andExpect(status().isNotFound());
     }
 
     @Test
     public void getHighestSalaryOfEmployees() throws Exception {
 
         when(service.getHighestSalaryOfEmployees()).thenReturn(433060);
-        this.mockMvc.perform(get("/api/v2/employee/highestSalary")).andExpect(status().isOk());
+        this.mockMvc.perform(get("/employee/highestSalary")).andExpect(status().isOk());
     }
 
     @Test
@@ -130,9 +128,7 @@ public class EmployeeControllerImplTests {
         list.add("Airi Satou2");
 
         when(service.getTopTenHighestEarningEmployeeNames()).thenReturn(list);
-        this.mockMvc
-                .perform(get("/api/v2/employee/topTenHighestEarningEmployeeNames"))
-                .andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee/topTenHighestEarningEmployeeNames")).andExpect(status().isFound());
     }
 
     @Test
@@ -140,30 +136,29 @@ public class EmployeeControllerImplTests {
         List<String> list = new ArrayList<>();
 
         when(service.getTopTenHighestEarningEmployeeNames()).thenReturn(list);
-        this.mockMvc
-                .perform(get("/api/v2/employee/topTenHighestEarningEmployeeNames"))
-                .andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee/topTenHighestEarningEmployeeNames")).andExpect(status().isNotFound());
     }
 
     @Test
     public void createEmployeeFailed() throws Exception {
+        Employee employee = new Employee(UUID.randomUUID(), "Tiger Nixon", 320800, 25, "Manager", "rbothe1@visa.com");
         EmployeeRequestDto request = new EmployeeRequestDto("Tiger Nixon", 320800, 25, "Manager", "rbothe1@visa.com");
-        when(service.createEmployee(request)).thenReturn(null);
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/v2/employee")
+        when(service.createEmployee(null)).thenReturn(employee);
+        mockMvc.perform(MockMvcRequestBuilders.post("/employee")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{}"))
-                .andExpect(status().isExpectationFailed());
+                .andExpect(status().isBadRequest());
     }
 
     @Test
     public void deleteEmployeeById() throws Exception {
         when(service.deleteEmployeeById("5")).thenReturn("Airi Satou");
-        this.mockMvc.perform(delete("/api/v2/employee/5")).andExpect(status().isOk());
+        this.mockMvc.perform(delete("/employee/5")).andExpect(status().isOk());
     }
 
     @Test
     public void deleteEmployeeByIdFailed() throws Exception {
         when(service.deleteEmployeeById("51")).thenReturn(null);
-        this.mockMvc.perform(delete("/api/v2/employee/51")).andExpect(status().isExpectationFailed());
+        this.mockMvc.perform(delete("/employee/51")).andExpect(status().isExpectationFailed());
     }
 }

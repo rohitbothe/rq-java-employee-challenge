@@ -1,11 +1,9 @@
 package com.reliaquest.api.model;
 
-import java.util.UUID;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.reliaquest.api.config.PrefixStrategy;
-
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +28,7 @@ public class Employee {
     private Integer age;
     private String title;
     private String email;
-    
+
     public Employee() {
         super();
     }

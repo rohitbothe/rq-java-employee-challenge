@@ -63,7 +63,7 @@ public class EmployeeServiceImplTest {
         Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
         assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
     }
-    
+
     @Test
     public void testGetAllEmployees() {
         List<Employee> employees = EmployeeTestUtil.getEmployeesList();
@@ -160,5 +160,4 @@ public class EmployeeServiceImplTest {
                 RestClientResponseException.class, () -> employeeService.getEmployeeById(id.toString()));
         assertEquals("HTTP error: " + HttpStatus.NOT_FOUND, ex.getMessage());
     }
-
 }

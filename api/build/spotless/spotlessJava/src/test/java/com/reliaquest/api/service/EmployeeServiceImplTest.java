@@ -30,7 +30,7 @@ import org.springframework.web.client.RestClientResponseException;
 /**
  * @author Rohit Bothe
  */
-public class EmployeeServiceTest {
+public class EmployeeServiceImplTest {
 
     private static final String SUCCESS_MESSAGE = "Request proceeded successfully";
 
@@ -52,6 +52,16 @@ public class EmployeeServiceTest {
         circuitBreaker = CircuitBreaker.of("employeeApiBreaker", config);
         when(circuitBreakerRegistry.circuitBreaker("employeeApiBreaker")).thenReturn(circuitBreaker);
         employeeService = new EmployeeServiceImpl(employeeRestApiService, circuitBreakerRegistry);
+    }
+
+    @Test
+    public void testCircuitBreakerTrips() {
+        when(employeeRestApiService.findAll())
+                .thenThrow(new HttpClientErrorException(
+                        HttpStatus.TOO_MANY_REQUESTS, HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase()));
+        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
+        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
+        assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
     }
 
     @Test
@@ -149,15 +159,5 @@ public class EmployeeServiceTest {
         RestClientResponseException ex = Assertions.assertThrows(
                 RestClientResponseException.class, () -> employeeService.getEmployeeById(id.toString()));
         assertEquals("HTTP error: " + HttpStatus.NOT_FOUND, ex.getMessage());
-    }
-
-    @Test
-    public void testCircuitBreakerTrips() {
-        when(employeeRestApiService.findAll())
-                .thenThrow(new HttpClientErrorException(
-                        HttpStatus.TOO_MANY_REQUESTS, HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase()));
-        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
-        Assertions.assertThrows(HttpClientErrorException.class, () -> employeeService.getAllEmployees());
-        assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
     }
 }
