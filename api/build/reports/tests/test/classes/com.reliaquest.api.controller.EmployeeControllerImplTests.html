@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.254s</div>
+<div class="counter">1.380s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">91%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,13 +61,117 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="createEmployeeFailed()"></a>
+<h3 class="failures">createEmployeeFailed()</h3>
+<span class="code">
+<pre>java.lang.AssertionError: Status expected:&lt;201&gt; but was:&lt;400&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.reliaquest.api.controller.EmployeeControllerImplTests.createEmployeeFailed(EmployeeControllerImplTests.java:150)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,72 +182,72 @@
 </tr>
 </thead>
 <tr>
-<td class="success">createEmployeeFailed()</td>
-<td class="success">0.343s</td>
-<td class="success">passed</td>
+<td class="failures">createEmployeeFailed()</td>
+<td class="failures">0.379s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">deleteEmployeeById()</td>
-<td class="success">0.016s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">deleteEmployeeByIdFailed()</td>
-<td class="success">0.046s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getAllEmployeesFound()</td>
-<td class="success">0.025s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getAllEmployeesNotFound()</td>
-<td class="success">0.038s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getEmployeeByIdFound()</td>
-<td class="success">0.040s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getEmployeeByIdNotFound()</td>
 <td class="success">0.017s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">deleteEmployeeByIdFailed()</td>
+<td class="success">0.050s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllEmployeesFound()</td>
+<td class="success">0.041s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllEmployeesNotFound()</td>
+<td class="success">0.031s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getEmployeeByIdFound()</td>
+<td class="success">0.102s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getEmployeeByIdNotFound()</td>
+<td class="success">0.035s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">getEmployeesByNameSearchFound()</td>
-<td class="success">0.024s</td>
+<td class="success">0.041s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getEmployeesByNameSearchNotFound()</td>
-<td class="success">0.259s</td>
+<td class="success">0.257s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getHighestSalaryOfEmployees()</td>
-<td class="success">0.015s</td>
+<td class="success">0.023s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTopTenHighestEarningEmployeeNamesFound()</td>
-<td class="success">0.018s</td>
+<td class="success">0.019s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getTopTenHighestEarningEmployeeNamesNone()</td>
-<td class="success">0.413s</td>
+<td class="success">0.385s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:32:44.576 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.reliaquest.api.controller.EmployeeControllerImplTests]: EmployeeControllerImplTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:32:45.074 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.reliaquest.api.ApiApplication for test class com.reliaquest.api.controller.EmployeeControllerImplTests
+<pre>22:36:31.880 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.reliaquest.api.controller.EmployeeControllerImplTests]: EmployeeControllerImplTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:36:32.401 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.reliaquest.api.ApiApplication for test class com.reliaquest.api.controller.EmployeeControllerImplTests
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -153,49 +257,86 @@
 
  :: Spring Boot ::                (v3.3.0)
 
-2025-08-31T19:32:46.638+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Starting EmployeeControllerImplTests using Java 17.0.6 with PID 1952 (started by rohit in /Users/rohit/Downloads/JAVA/RELIAQUEST_2/java-employee-challenge/api)
-2025-08-31T19:32:46.640+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Running with Spring Boot v3.3.0, Spring v6.1.13
-2025-08-31T19:32:46.650+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-08-31T19:32:52.863+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.reliaquest.api.filter.RequestLogger    : Filter 'requestLogger' configured for use
-2025-08-31T19:32:52.897+05:30  INFO 1952 --- [employee-api] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-08-31T19:32:52.898+05:30  INFO 1952 --- [employee-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-08-31T19:32:52.909+05:30  INFO 1952 --- [employee-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
-2025-08-31T19:32:53.026+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Started EmployeeControllerImplTests in 7.686 seconds (process running for 11.722)
-2025-08-31T19:32:53.233+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1]
-2025-08-31T19:32:53.339+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
-2025-08-31T19:32:53.412+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1], TimeTakenToComplete=179 ms
-2025-08-31T19:32:53.486+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1]
-2025-08-31T19:32:53.489+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 0
-2025-08-31T19:32:53.489+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
-2025-08-31T19:32:53.510+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1], TimeTakenToComplete=24 ms
-2025-08-31T19:32:53.539+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=DELETE, message=DELETE /api/v2/employee/51, client=127.0.0.1]
-2025-08-31T19:32:53.561+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Failed to Delete
-2025-08-31T19:32:53.564+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=DELETE, message=DELETE /api/v2/employee/51, client=127.0.0.1], TimeTakenToComplete=25 ms
-2025-08-31T19:32:53.589+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/search/Berry, client=127.0.0.1]
-2025-08-31T19:32:53.811+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 0
-2025-08-31T19:32:53.812+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
-2025-08-31T19:32:53.819+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/search/Berry, client=127.0.0.1], TimeTakenToComplete=230 ms
-2025-08-31T19:32:53.851+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=POST, message=POST /api/v2/employee, client=127.0.0.1]
-2025-08-31T19:32:54.173+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=POST, message=POST /api/v2/employee, client=127.0.0.1, payload={}], TimeTakenToComplete=322 ms
-2025-08-31T19:32:54.198+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/5, client=127.0.0.1]
-2025-08-31T19:32:54.223+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/5, client=127.0.0.1], TimeTakenToComplete=25 ms
-2025-08-31T19:32:54.249+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1]
-2025-08-31T19:32:54.253+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/topTenHighestEarningEmployeeNames, client=127.0.0.1], TimeTakenToComplete=4 ms
-2025-08-31T19:32:54.280+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1]
-2025-08-31T19:32:54.282+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 6
-2025-08-31T19:32:54.287+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee, client=127.0.0.1], TimeTakenToComplete=7 ms
-2025-08-31T19:32:54.305+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/search/Ashton, client=127.0.0.1]
-2025-08-31T19:32:54.313+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 6
-2025-08-31T19:32:54.316+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/search/Ashton, client=127.0.0.1], TimeTakenToComplete=11 ms
-2025-08-31T19:32:54.331+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=DELETE, message=DELETE /api/v2/employee/5, client=127.0.0.1]
-2025-08-31T19:32:54.333+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Deleted Successfully
-2025-08-31T19:32:54.335+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=DELETE, message=DELETE /api/v2/employee/5, client=127.0.0.1], TimeTakenToComplete=4 ms
-2025-08-31T19:32:54.353+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/highestSalary, client=127.0.0.1]
-2025-08-31T19:32:54.354+05:30  INFO 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Higest salary is 433060
-2025-08-31T19:32:54.358+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/highestSalary, client=127.0.0.1], TimeTakenToComplete=5 ms
-2025-08-31T19:32:54.372+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /api/v2/employee/23, client=127.0.0.1]
-2025-08-31T19:32:54.374+05:30 ERROR 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : No list Found
-2025-08-31T19:32:54.375+05:30 DEBUG 1952 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /api/v2/employee/23, client=127.0.0.1], TimeTakenToComplete=3 ms
+2025-09-01T22:36:33.960+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Starting EmployeeControllerImplTests using Java 17.0.6 with PID 1717 (started by rohit in /Users/rohit/Downloads/JAVA/RELIAQUEST_2/java-employee-challenge/api)
+2025-09-01T22:36:33.962+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Running with Spring Boot v3.3.0, Spring v6.1.13
+2025-09-01T22:36:33.969+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-09-01T22:36:40.273+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.api.filter.APIRequestLogger          : Filter 'APIRequestLogger' configured for use
+2025-09-01T22:36:40.302+05:30  INFO 1717 --- [employee-api] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-09-01T22:36:40.303+05:30  INFO 1717 --- [employee-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-09-01T22:36:40.332+05:30  INFO 1717 --- [employee-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2025-09-01T22:36:40.426+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.c.EmployeeControllerImplTests      : Started EmployeeControllerImplTests in 7.644 seconds (process running for 12.341)
+2025-09-01T22:36:40.630+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee/topTenHighestEarningEmployeeNames, client=127.0.0.1]
+2025-09-01T22:36:40.724+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : GetTopTenHighestEarningEmployeeNames
+2025-09-01T22:36:40.789+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee/topTenHighestEarningEmployeeNames, client=127.0.0.1], TimeTakenToComplete=159 ms
+2025-09-01T22:36:40.865+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee, client=127.0.0.1]
+2025-09-01T22:36:40.867+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 0
+2025-09-01T22:36:40.881+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee, client=127.0.0.1], TimeTakenToComplete=16 ms
+2025-09-01T22:36:40.906+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=DELETE, message=DELETE /employee/51, client=127.0.0.1]
+2025-09-01T22:36:40.929+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Deleted Successfully
+2025-09-01T22:36:40.934+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=DELETE, message=DELETE /employee/51, client=127.0.0.1], TimeTakenToComplete=28 ms
+2025-09-01T22:36:40.986+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee/search/Berry, client=127.0.0.1]
+2025-09-01T22:36:41.212+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 0
+2025-09-01T22:36:41.218+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee/search/Berry, client=127.0.0.1], TimeTakenToComplete=232 ms
+2025-09-01T22:36:41.240+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=POST, message=POST /employee, client=127.0.0.1]
+2025-09-01T22:36:41.572+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=POST, message=POST /employee, client=127.0.0.1, payload={}], TimeTakenToComplete=332 ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /employee
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json;charset=UTF-8&quot;, Content-Length:&quot;2&quot;]
+             Body = {}
+    Session Attrs = {}
+
+Handler:
+             Type = com.reliaquest.api.controller.EmployeeControllerImpl
+           Method = com.reliaquest.api.controller.EmployeeControllerImpl#createEmployee(EmployeeRequestDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.bind.MethodArgumentNotValidException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:&quot;application/problem+json&quot;]
+     Content type = application/problem+json
+             Body = {&quot;type&quot;:&quot;about:blank&quot;,&quot;title&quot;:&quot;Bad Request&quot;,&quot;status&quot;:400,&quot;detail&quot;:&quot;Invalid request content.&quot;,&quot;instance&quot;:&quot;/employee&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2025-09-01T22:36:41.666+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee/5, client=127.0.0.1]
+2025-09-01T22:36:41.668+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : GetEmployeeById
+2025-09-01T22:36:41.704+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee/5, client=127.0.0.1], TimeTakenToComplete=38 ms
+2025-09-01T22:36:41.730+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee/topTenHighestEarningEmployeeNames, client=127.0.0.1]
+2025-09-01T22:36:41.735+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : GetTopTenHighestEarningEmployeeNames
+2025-09-01T22:36:41.737+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee/topTenHighestEarningEmployeeNames, client=127.0.0.1], TimeTakenToComplete=7 ms
+2025-09-01T22:36:41.762+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee, client=127.0.0.1]
+2025-09-01T22:36:41.765+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 6
+2025-09-01T22:36:41.794+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee, client=127.0.0.1], TimeTakenToComplete=32 ms
+2025-09-01T22:36:41.821+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee/search/Ashton, client=127.0.0.1]
+2025-09-01T22:36:41.824+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Size of employee list is 6
+2025-09-01T22:36:41.828+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee/search/Ashton, client=127.0.0.1], TimeTakenToComplete=7 ms
+2025-09-01T22:36:41.857+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=DELETE, message=DELETE /employee/5, client=127.0.0.1]
+2025-09-01T22:36:41.858+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Deleted Successfully
+2025-09-01T22:36:41.860+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=DELETE, message=DELETE /employee/5, client=127.0.0.1], TimeTakenToComplete=3 ms
+2025-09-01T22:36:41.882+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee/highestSalary, client=127.0.0.1]
+2025-09-01T22:36:41.883+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Higest salary is 433060
+2025-09-01T22:36:41.893+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee/highestSalary, client=127.0.0.1], TimeTakenToComplete=11 ms
+2025-09-01T22:36:41.919+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request started HTTPMethod=GET, message=GET /employee/23, client=127.0.0.1]
+2025-09-01T22:36:41.923+05:30  INFO 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : GetEmployeeById
+2025-09-01T22:36:41.925+05:30 DEBUG 1717 --- [employee-api] [    Test worker] c.r.a.controller.EmployeeControllerImpl  : Request Completed. HTTPMethod=GET, message=GET /employee/23, client=127.0.0.1], TimeTakenToComplete=6 ms
 </pre>
 </span>
 </div>
@@ -207,7 +348,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.4</a> at 31 Aug 2025, 19:32:54</p>
+<a href="http://www.gradle.org">Gradle 7.6.4</a> at 1 Sept 2025, 22:36:42</p>
 </div>
 </div>
 </body>

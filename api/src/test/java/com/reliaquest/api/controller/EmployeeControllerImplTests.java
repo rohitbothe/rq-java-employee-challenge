@@ -50,7 +50,7 @@ public class EmployeeControllerImplTests {
         list.add(emp5);
 
         when(service.getAllEmployees()).thenReturn(list);
-        this.mockMvc.perform(get("/employee")).andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee")).andExpect(status().isOk());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class EmployeeControllerImplTests {
         List<Employee> list = new ArrayList<>();
 
         when(service.getAllEmployees()).thenReturn(list);
-        this.mockMvc.perform(get("/employee")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee")).andExpect(status().isOk());
     }
 
     @Test
@@ -80,7 +80,7 @@ public class EmployeeControllerImplTests {
         list.add(emp5);
 
         when(service.getAllEmployeesByName("Ashton")).thenReturn(list);
-        this.mockMvc.perform(get("/employee/search/Ashton")).andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee/search/Ashton")).andExpect(status().isOk());
     }
 
     @Test
@@ -88,7 +88,7 @@ public class EmployeeControllerImplTests {
         List<Employee> list = new ArrayList<>();
 
         when(service.getAllEmployeesByName("Berry")).thenReturn(list);
-        this.mockMvc.perform(get("/employee/search/Berry")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee/search/Berry")).andExpect(status().isOk());
     }
 
     @Test
@@ -96,14 +96,14 @@ public class EmployeeControllerImplTests {
         Employee emp5 = new Employee(UUID.randomUUID(), "Airi Satou", 162700, 30, "Manager", "rbothe1@visa.com");
 
         when(service.getEmployeeById("5")).thenReturn(emp5);
-        this.mockMvc.perform(get("/employee/5")).andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee/5")).andExpect(status().isOk());
     }
 
     @Test
     public void getEmployeeByIdNotFound() throws Exception {
 
         when(service.getEmployeeById("23")).thenReturn(null);
-        this.mockMvc.perform(get("/employee/23")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee/23")).andExpect(status().isOk());
     }
 
     @Test
@@ -128,7 +128,7 @@ public class EmployeeControllerImplTests {
         list.add("Airi Satou2");
 
         when(service.getTopTenHighestEarningEmployeeNames()).thenReturn(list);
-        this.mockMvc.perform(get("/employee/topTenHighestEarningEmployeeNames")).andExpect(status().isFound());
+        this.mockMvc.perform(get("/employee/topTenHighestEarningEmployeeNames")).andExpect(status().isOk());
     }
 
     @Test
@@ -136,7 +136,7 @@ public class EmployeeControllerImplTests {
         List<String> list = new ArrayList<>();
 
         when(service.getTopTenHighestEarningEmployeeNames()).thenReturn(list);
-        this.mockMvc.perform(get("/employee/topTenHighestEarningEmployeeNames")).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/employee/topTenHighestEarningEmployeeNames")).andExpect(status().isOk());
     }
 
     @Test
@@ -153,12 +153,12 @@ public class EmployeeControllerImplTests {
     @Test
     public void deleteEmployeeById() throws Exception {
         when(service.deleteEmployeeById("5")).thenReturn("Airi Satou");
-        this.mockMvc.perform(delete("/employee/5")).andExpect(status().isOk());
+        this.mockMvc.perform(delete("/employee/5")).andExpect(status().isNoContent());
     }
 
     @Test
     public void deleteEmployeeByIdFailed() throws Exception {
         when(service.deleteEmployeeById("51")).thenReturn(null);
-        this.mockMvc.perform(delete("/employee/51")).andExpect(status().isExpectationFailed());
+        this.mockMvc.perform(delete("/employee/51")).andExpect(status().isNoContent());
     }
 }

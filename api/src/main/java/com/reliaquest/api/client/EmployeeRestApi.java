@@ -25,5 +25,5 @@ public interface EmployeeRestApi {
     EmployeeResponse create(@RequestBody EmployeeRequestDto employeeRequest);
 
     @DeleteExchange()
-    DeleteEmployeeResponse delete(@RequestBody DeleteEmployeeRequest name);
+    DeleteEmployeeResponse delete(@RequestBody DeleteEmployeeRequest deleteEmployeeRequest);
 }

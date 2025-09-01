@@ -74,7 +74,7 @@ public class EmployeeControllerImpl implements IEmployeeController<Employee, Emp
         Employee employee = employeeService.createEmployee(employeeInput);
         log.info(EmployeeConstants.INFO_CREATED);
         ResponseEntity<Employee> response = null;
-        response = new ResponseEntity<>(employee, HttpStatus.CREATED);
+        response = new ResponseEntity<>(employee, HttpStatus.OK);
         return response;
     }
 
