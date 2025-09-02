@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.reliaquest.api.service.EmployeeServiceImplTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-09-02T09:59:52" hostname="Rohits-Air.domain.name" time="3.74">
+  <properties/>
+  <testcase name="testGetTopTenHighestEarningEmployeeNames()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="3.349"/>
+  <testcase name="testGetAllEmployees_whenApiThrowsException()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.081"/>
+  <testcase name="testCircuitBreakerTrips()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.053"/>
+  <testcase name="testGetHighestSalaryOfEmployees()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.015"/>
+  <testcase name="testDeleteEmployeeById()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.034"/>
+  <testcase name="testGetEmployeeById()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.007"/>
+  <testcase name="testCreateEmployee()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.069"/>
+  <testcase name="testGetAllEmployees()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.016"/>
+  <testcase name="testGetEmployeeById_whenApiThrowsException()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.009"/>
+  <testcase name="testGetAllEmployeesByName()" classname="com.reliaquest.api.service.EmployeeServiceImplTest" time="0.018"/>
+  <system-out><![CDATA[15:29:55.334 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- Higest salary is {}
+15:29:55.348 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployees
+15:29:55.505 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployees
+15:29:55.557 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployees
+15:29:55.560 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployees
+15:29:55.605 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- Higest salary is {}
+15:29:55.609 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployees
+15:29:55.636 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetEmployeeById
+15:29:55.640 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- Deleted Successfully
+15:29:55.669 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetEmployeeById
+15:29:55.744 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- Created Successfully
+15:29:55.757 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployees
+15:29:55.778 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetEmployeeById
+15:29:55.803 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployeesByName
+15:29:55.803 [Test worker] INFO com.reliaquest.api.controller.EmployeeControllerImpl -- GetAllEmployees
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
